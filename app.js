@@ -37,10 +37,12 @@ app.get('/', (req, res) => {
 });
 
 
-//Post page
-app.get('/posts', (req, res) => {
-    res.send("on Posts page");
-});
+
 
 //How to listen
 app.listen(3000);
+
+
+//import routes from posts.js
+const postsRoute = require('./routes/posts.js');
+app.use('/posts', postsRoute); //use the routes from posts.js
